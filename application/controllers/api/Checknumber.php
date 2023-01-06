@@ -56,7 +56,7 @@ class Checknumber extends CI_Controller
     
         
         // array_push($data);
-        $data['url'] = "http://4.194.251.178/panel_dompul/index.php/api/checknumber";
+        $data['url'] = "http://103.162.60.183:9314/panels/index.php/api/checknumber";
         $data['nomor'] = $nomor;
         $data['id_user']=$id_user;
         

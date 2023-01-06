@@ -86,15 +86,29 @@
             <div class="col-md-6 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                  <form class="forms-sample" method="post" action="">
+               
                  
                         <input type="hidden" name="device" value="<?=$dserver->id?>">
                          <div class="form-Device row">
                         <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Nomor<br> <span style="color:red"> <?=form_error('name')?> <?php echo $this->session->flashdata('message_add_webhook_error'); ?></span></label>
                         <div class="col-sm-9">
+                        <form class="forms-sample" method="get" action="">
+                        <input type="hidden" name="process_getotp" value="true">
                           <input type="text" class="form-control"  name="nomor" id="name" placeholder="ex : Cabang A" value="<?=$dserver->nomor?>">
+                         
+                         <button class=" btn btn-gradient-info mr-2"  type="submit">Minta OTP</button>
+                         </div>
+                      </div>
+                      <div class="form-Device row">
+                        <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Kode OTP<br> <span style="color:red"> <?=form_error('name')?> <?php echo $this->session->flashdata('message_add_webhook_error'); ?></span></label>
+                        <div class="col-sm-9">
+                        <form class="forms-sample" method="get" action="">
+                          <input type="hidden" name="process_kodeotp" value="true">
+                          <input type="text" class="form-control"  name="kode_otp" id="name" placeholder="ex : 51232 " value="">
+                          <button class=" btn btn-gradient-success mr-2"  type="submit">Get Token</button>
                         </div>
                       </div>
+                      <form class="forms-sample" method="post" action="">
                       <div class="form-Device row">
                         <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Token<br> <span style="color:red"> <?=form_error('name')?> <?php echo $this->session->flashdata('message_add_webhook_error'); ?></span></label>
                         <div class="col-sm-9">
@@ -108,7 +122,7 @@
                         </div>
                       </div>
                     
-                    
+                      <span style="color:red">  <?php echo $this->session->flashdata('message_add_device_error'); ?></span>
                      
                     
                      
